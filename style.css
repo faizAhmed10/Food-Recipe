@@ -1,0 +1,261 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --tenne-tawny: #d65108;
+    --tenne-tawny-dark: #b54507;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Utility Classes */
+
+.text-center{
+    text-align: center;
+}
+
+.center{
+    display: block;
+    margin: 10px auto;
+}
+.flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.line{
+    display: block;
+    margin: 20px auto;
+    height: 1px;
+    width: 80%;
+    background-color: black;
+}
+
+.gen-margin{
+    margin: 15px auto;
+}
+
+/* header */
+
+#search-input{
+    width: 30%;
+    height: 30px;
+    padding: 0 1rem;
+    font-size: 1.1rem;
+    font-family: inherit;
+    outline: 0;
+    border: 1px solid var(--tenne-tawny);
+    color: var(--tenne-tawny);
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+}
+
+#search-input::placeholder{
+    color: #d65108;
+}
+
+.S-btn{
+    width: 60px;
+    height: 30px;
+    font-family: inherit;
+    background-color: var(--tenne-tawny);
+    color: white;
+    /* border: none; */
+    /* border-radius: 10px; */
+    transition: 0.2s ease-in-out;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    cursor: pointer;
+}
+
+.S-btn:hover{
+    background-color: var(--tenne-tawny-dark);
+}
+
+/* Meal Card */
+
+.meal-result{
+    margin-top: 4rem;
+}
+#meal{
+    /* margin: 2.4rem 0; */
+    display: grid;
+    grid-template-columns: repeat(2,450px);
+    grid-gap: 35px;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+
+    
+}
+.meal-item{
+    box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.79);
+    /* margin: 2rem 0; */
+    overflow: hidden;
+    border-radius: 1rem;
+    height: 350px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.meal-img img{
+    width: 100%;
+    height: 200px;
+    display: block;
+}
+.meal-name{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.meal-name h3{
+    margin-top: 5px;
+}
+
+.card-btn{
+    
+    width: 100px;
+    height: 30px;
+    font-size: large;
+    background-color: #d65108;
+    transition: 0.2s ease-in-out;
+    /* display: block; */
+    /* padding: 0.6rem; */
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+.card-btn a{
+    
+}
+
+.card-btn:hover{
+    background-color: #b54507;
+}
+
+/* Result Window */
+
+.recipe-btn{
+    color: white;
+    width: 40px;
+    height: 40px;
+    font-size: large;
+    background-color:black;
+    transition: 0.2s ease-in-out;
+    border-radius: 2rem;
+    text-decoration: none;
+    /* margin: 1rem auto; */
+    display: block;
+    padding: 0.6rem;
+    cursor: pointer;
+    margin-left: 440px;
+}
+
+.recipe-btn:hover{
+    background-color: #413f3d;
+}
+
+.details{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--tenne-tawny);
+    overflow-y: scroll;
+    width: 90%;
+    height: 90%;
+    display: none;
+    padding: 2rem 0;
+    color: white;
+}
+.recipe-title{
+    margin-left: 185px;
+    width: 500px;
+    text-align: center;
+}
+.details-content{
+    display: flex;
+
+    width: 100%;
+    /* align-items: center;
+    justify-content: center; */
+}
+
+.det h2{
+    /* margin: 0px 475px; */
+    display: block;
+    /* margin-right: 435px; */
+}
+
+.recipe-meal-img img{
+    display: block;
+    margin: 10px auto;
+    height: 350px;
+    width: 450px;
+}
+
+#watch-btn{
+    display: block;
+    margin: 10px auto;
+    width: 150px;
+    height: 50px;
+    background-color: white;
+    
+}
+
+#watch-btn a{
+    color: navy;
+    text-decoration: none;
+}
+
+#watch-btn:hover{
+    text-decoration: underline;
+}
+
+/* JS related */
+
+.showRecipe{
+    display: block;
+}
+
+.details-content p:not(.recipe-category){
+    padding: 1rem 0;
+}
+
+.recipe-close-btn{
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    font-size: 1.8rem;
+    background: #fff;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.9;
+}
+
+.notFound{
+    grid-template-columns: 1fr!important;
+    color: var(--tenne-tawny);
+    font-size: 1.8rem;
+    font-weight: 600;
+    width: 100%;
+}
